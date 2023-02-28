@@ -10,6 +10,8 @@ const categories = store.getters["categories/getCategories"]
 const changeCategoryId = (id) => store.commit('products/changeCategoryId', id)
 
 
+
+
 </script>
 <template>
   <div class="mtavari w-full">
