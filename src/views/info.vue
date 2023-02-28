@@ -1,21 +1,15 @@
 <script setup>
-import { computed,onMounted } from 'vue';
-import { useRouter,useRoute } from 'vue-router';
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 import { useStore } from 'vuex';
-
-const route = useRoute()
-const router = useRouter()
-
 const store = useStore()
+const route = useRoute()
 
 const product = computed(() => {
-    store.commit('GET_PRODUCT_BY_ID', +route.params.id)
-    return store.getters.getactiveProduct
+    store.commit("products/GET_PRODUCT_BY_ID", +route.params.id)
+    return store.getters["products/getactiveProduct"]
 })
 
-onMounted(() => {
-    
-})
 
 </script>
 
@@ -27,9 +21,6 @@ onMounted(() => {
     <p class="text-gray-700 text-base">
      {{ product.description }}
     </p>
-  </div>
-  <div class="px-6 pt-4 pb-2">
-    
   </div>
 </div>
 </template>
