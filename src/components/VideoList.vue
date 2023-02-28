@@ -27,8 +27,6 @@ const changeCategoryId = (id) => store.commit('products/changeCategoryId', id)
           </div>
         </div>
       </nav>
-
-
     </div>
     <ul class="myul">
       <div class="div1 p-10 grid grid-cols-4 gap-4">
