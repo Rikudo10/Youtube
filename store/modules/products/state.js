@@ -10,7 +10,7 @@ const state = {
       photo:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQENYuQApXunBHXyeolCeySCpvx_2CjNhcIsmxohmFbIVvXtfvE_LDBSeb1OhiNyVKV07E&usqp=CAU",
       views: "121k ნახვა",
-      categoryId: 7
+      tags: ["თამაშები","მიქსები"]
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ const state = {
       photo:
         "https://upload.wikimedia.org/wikipedia/ka/1/13/%E1%83%94%E1%83%A0%E1%83%98%E1%83%A1%E1%83%98%E1%83%9D%E1%83%9C%E1%83%98%E1%83%A1_%E1%83%9A%E1%83%9D%E1%83%92%E1%83%9D.png",
       views: "115k ნახვა",
-      categoryId: 10
+      tags: ["მუსიკა", "ცეკვა", "მიქსები"]
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ const state = {
       photo:
         "https://upload.wikimedia.org/wikipedia/commons/e/ea/Georgian_dance_3.jpg",
       views: "101k ნახვა",
-      categoryId: 9
+      tags: ["მუსიკა", "ცეკვა", "მიქსები"]
     },
     {
       id: 4,
@@ -41,7 +41,7 @@ const state = {
       photo:
         "https://ge.igotoworld.com/frontend/webcontent/websites/1/images/gallery/40925_370x246_bycetxgxzmvbpotdnclmzbjbhfzi.jpg",
       views: "122k ნახვა",
-      categoryId: 9
+      tags: ["მუსიკა", "ცეკვა", "მიქსები"]
     },
     {
       id: 5,
@@ -51,7 +51,7 @@ const state = {
         "https://i.ytimg.com/vi/q7QyKLN25EY/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGIgYihiMA8=&rs=AOn4CLALFbhEhoh_QockAtXLfRt2Y25j7A",
       photo: "https://www.zong.com.pk/assets/images/music/channel_hero_sm.jpg",
       views: "199k ნახვა",
-      categoryId: 3
+      tags: ["მუსიკა", "მიქსები"]
     },
     {
       id: 6,
@@ -61,7 +61,7 @@ const state = {
       photo:
         "https://i.pinimg.com/originals/1a/2d/1a/1a2d1a737e96a3565e4b78468f2430d3.jpg",
       views: "124k ნახვა",
-      categoryId: 2
+      tags: ["მუსიკა", "ანიმე", "ფილმები", "სერიალები"]
     },
     {
       id: 7,
@@ -71,7 +71,7 @@ const state = {
       photo:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXdXC2iQ5iJPCEhIHQKgY3_2VxHAMo8QGj5A&usqp=CAU",
       views: "121k ნახვა",
-      categoryId: 2
+      tags: ["ანიმე", "ფილმები", "სერიალები"]
     },
     {
       id: 8,
@@ -81,7 +81,7 @@ const state = {
       photo:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1rHlNqodMqoKoWRj4w8wrLLNIQjh6AuZb6w&usqp=CAU",
       views: "125k ნახვა",
-      categoryId: 2
+      tags: ["მუსიკა", "ანიმე", "ფილმები", "სერიალები"]
     },
     {
       id: 9,
@@ -92,7 +92,7 @@ const state = {
       photo:
         "https://w0.peakpx.com/wallpaper/73/1004/HD-wallpaper-yamackocovali-cukurs-vartolu-thumbnail.jpg",
       views: "122k ნახვა",
-      categoryId: 3
+      tags: ["ფილმები", "სერიალები", "მუსიკა"]
     },
     {
       id: 10,
@@ -103,7 +103,7 @@ const state = {
       photo:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxCpKZ9lHFVn6fQMfSOHMzNNkZSns_9RfK-g&usqp=CAU",
       views: "100k ნახვა",
-      categoryId: 8
+      tags: ["ჰიპ-ჰოპი", "მუსიკა"]
     },
     {
       id: 11,
@@ -114,7 +114,7 @@ const state = {
       photo:
         "https://i.pinimg.com/550x/5a/70/9a/5a709ac3e31764381b40c74e2d6269d6.jpg",
       views: "121k ნახვა",
-      categoryId: 5
+      tags: ["ფილმები", "სერიალები"]
     },
     {
       id: 12,
@@ -123,7 +123,7 @@ const state = {
       cover: "https://i.ytimg.com/vi/XAwU7x1w1Ts/maxresdefault.jpg",
       photo: "https://images5.alphacoders.com/975/975315.jpg",
       views: "122k ნახვა",
-      categoryId: 2
+      tags: ["ანიმე", "სერიალები", "ფილმები"]
     },
     {
       id: 13,
@@ -134,7 +134,7 @@ const state = {
       photo:
         "https://w0.peakpx.com/wallpaper/717/37/HD-wallpaper-moon-black-music-night.jpg",
       views: "123k ნახვა",
-      categoryId: 3
+      tags: ["მუსიკა", "მიქსები"]
     },
     {
       id: 14,
@@ -144,7 +144,7 @@ const state = {
       photo:
         "https://i.pinimg.com/originals/1d/4d/04/1d4d04335549fa2cff0e000932c9f17b.jpg",
       views: "125k ნახვა",
-      categoryId: 7
+      tags: ["თამაშები", "მიქსები"]
     },
     {
       id: 15,
@@ -153,7 +153,7 @@ const state = {
       cover: "https://i.ytimg.com/vi/jXMnHGpo2wk/maxresdefault.jpg",
       photo: "https://wallpaperaccess.com/full/1269941.jpg",
       views: "130k ნახვა",
-      categoryId: 7
+      tags: ["თამაშები", "მიქსები"]
     },
     {
       id: 16,
@@ -162,10 +162,10 @@ const state = {
       cover: "https://i.ytimg.com/vi/pz2Ixqni3_k/maxresdefault.jpg",
       photo: "https://wallpaper.dog/large/20466209.jpg",
       views: "121k ნახვა",
-      categoryId: 6
+      tags: ["მუსიკა","მიქსები", "ჰიპ-ჰოპი"]
     },
   ],
-  categoryId: 1,
+  tag: "ყველა",
   cart: [],
 };
 export default state;

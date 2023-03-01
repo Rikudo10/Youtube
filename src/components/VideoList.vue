@@ -6,7 +6,7 @@ import { computed } from 'vue'
 
 const store = useStore()
 const filteredPost = computed(() => store.getters['products/filteredPost'])
-const categories = store.getters["categories/getCategories"]
+const categories = store.getters["products/getCategories"]
 const changeCategoryId = (id) => store.commit('products/changeCategoryId', id)
 
 </script>
@@ -18,10 +18,10 @@ const changeCategoryId = (id) => store.commit('products/changeCategoryId', id)
           <div class="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul
               class="menuul flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <li v-for="category in categories" :key="category.id" @click="changeCategoryId(category.id)">
+              <li v-for="category in categories" :key="category.id" @click="changeCategoryId(category)">
                 <a href="#"
                   class="mya block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">{{
-                    category.title }}</a>
+                    category }}</a>
               </li>
             </ul>
           </div>
@@ -42,7 +42,6 @@ const changeCategoryId = (id) => store.commit('products/changeCategoryId', id)
 .mya:hover {
   background-color: rgb(117, 116, 116);
 }
-
 .mya {
   height: 32px;
   border: none;
@@ -64,7 +63,6 @@ const changeCategoryId = (id) => store.commit('products/changeCategoryId', id)
   color: white;
   padding-right: 150px;
 }
-
 .menubar:hover {
   color: black;
   background-color: white;

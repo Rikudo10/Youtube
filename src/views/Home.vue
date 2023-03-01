@@ -4,6 +4,8 @@ import NavBars from "../components/menus/NavBars.vue";
 </script>
 
 <template>
-  <NavBars />
+  <div>
+    <NavBars />
     <VideoList />
+  </div>
 </template>

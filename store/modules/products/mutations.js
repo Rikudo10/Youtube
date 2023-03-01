@@ -16,6 +16,6 @@ export default {
         state.activeProduct = state.products.find(item => item.id === +payload)
     },
     changeCategoryId(state, id){
-        state.categoryId = id
+        state.tag = id
     }
 }
