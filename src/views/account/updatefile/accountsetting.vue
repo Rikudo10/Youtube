@@ -1,28 +1,31 @@
-<script>
-export default {
-  data() {
-    return {
-      nickname: '',
-      email: ''
-    }
-  },
-  methods: {
-    submitForm() {
-      console.log('Submitted:', this.nickname, this.email)
-    }
-  }
-}
+<script setup>
+import {useStore} from "vuex";
+import {computed} from "vue";
+
+const store = useStore()
+const info = computed(() => store.getters["register/info"] )
 </script>
 <template>
-  <form @submit.prevent="submitForm">
+  <div>
+    <h1>Account Settings</h1>
     <div>
-      <label for="nickname">Nickname:</label>
-      <input type="text" id="nickname" v-model="nickname" />
+      <ul>
+        <li v-for="test in info" :key="test">
+          <p>{{test.username}}</p>
+          <p>{{test.password}}</p>
+          <p>{{test.email}}</p>
+        </li>
+      </ul>
     </div>
-    <div>
-      <label for="email">Email:</label>
-      <input type="email" id="email" v-model="email" />
-    </div>
-    <button type="submit">Submit</button>
-  </form>
+  </div>
 </template>
+
+<style scoped>
+li {
+  color: white;
+}
+h1 {
+  color: white;
+  font-size: 25px;
+}
+</style>
