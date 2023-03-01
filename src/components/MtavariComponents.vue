@@ -38,7 +38,9 @@ const menubar = computed(() => store.getters['sidebar/slidemenu'])
         <Special-Icon2/>
       </div>
       <div class="accounts  ">
+        <router-link to="/settings">
         <Special-Icon/>
+        </router-link>
       </div>
     </div>
 
