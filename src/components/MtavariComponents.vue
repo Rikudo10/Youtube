@@ -26,6 +26,7 @@ const menubar = computed(() => store.getters['sidebar/slidemenu'])
                 {{ slider.title }}
               </li>
             </span>
+          <li class="accounts1"><router-link to="/account">Accounts</router-link></li>
         </ul>
       </div>
     </div>
@@ -48,6 +49,9 @@ const menubar = computed(() => store.getters['sidebar/slidemenu'])
 </template>
 
 <style scoped>
+.accounts1 {
+  padding-top: 20px;
+}
 .li1 {
   padding-left: 17px;
 }

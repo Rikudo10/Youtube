@@ -12,6 +12,23 @@ const routes = [
     component: home,
   },
   {
+    path: "/account",
+    name: "account",
+    component: () => import('@/views/AllAccount.vue'),
+    children:[
+      {
+        path: "acccountsetting",
+        name:"acccountsetting",
+        component: () => import ('@/views/account/updatefile/accountsetting.vue')
+      },
+      {
+        path:"accountprivacy",
+        name: "accountprivacy",
+        component: ()=> import ('@/views/account/updatefile/accountprivacy.vue')
+      }
+    ]
+  },
+  {
     path: "/about",
     name: "About",
     component: about,
