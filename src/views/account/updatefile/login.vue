@@ -17,6 +17,10 @@ export default {
       axios.post('https://items.magischer.de/api/auth/login', data)
           .then(response => {
             if(response.data.status){
+              this.$store.dispatch('register/', response.data.token)
+
+              console.log(response.data.token)
+
               this.$router.push({ name: 'Home'})
             }else{
               this.$router.push({name: 'accountsetting', params: 'error'})

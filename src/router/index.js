@@ -51,14 +51,14 @@ const routes = [
     component: () => import('@/views/account/settings.vue'),
     children:[
       {
-        path: "acccountsetting",
-        name:"acccountsetting",
-        component: () => import ('@/views/account/updatefile/accountsetting.vue')
+        path: "login",
+        name:"login",
+        component: () => import ('@/views/account/updatefile/login.vue')
       },
       {
-        path:"accountprivacy",
-        name: "accountprivacy",
-        component: ()=> import ('@/views/account/updatefile/accountprivacy.vue')
+        path:"registration",
+        name: "registration",
+        component: ()=> import ('@/views/account/updatefile/registration.vue')
       }
     ]
   },
