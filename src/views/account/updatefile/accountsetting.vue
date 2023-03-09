@@ -48,6 +48,7 @@ export default {
   </div>
 </template>
 
+
 <style scoped>
 .mydiv1 {
   padding-bottom: 10px;
