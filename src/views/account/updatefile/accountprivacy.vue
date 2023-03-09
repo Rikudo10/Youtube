@@ -1,35 +1,53 @@
-<script setup>
-import {ref} from "vue";
-import {useStore} from "vuex";
+<script>
+import axios from 'axios';
 
-const store = useStore()
+export default {
+  data() {
+    return {
+      name: '',
+      email: '',
+      password: ''
+    }
+  },
+  methods: {
+    submitForm() {
+      const data = {
+        name: this.name,
+        email: this.email,
+        password: this.password
+      };
 
-const username = ref()
-const email = ref()
-const password = ref()
-
-const registeruser = ()=> {
-  store.dispatch("register/register",{username:username.value,email:email.value,password:password.value})
-  console.log(store.state.register.user)
+      axios.post('https://items.magischer.de/api/auth/register', data)
+          .then(response => {
+            console.log(response.data)
+          })
+          .catch(error => {
+          });
+    }
+  }
 }
-
 </script>
 <template>
   <div class="login flex items-center absolute top-20 right-[10%] justify-center w-[20%] h-[40%] bg-blue-100">
     <div>
+      <form @submit.prevent="submitForm">
       <h1 class="text-center text-lg font-bold text-gray-500">Sign Up</h1>
       <div class="space-y-4 mt-6">
         <div class="w-full">
-          <input v-model="username" type="text" placeholder="username" class="px-4 py-2 bg-gray-50" />
+          <label for="name">Name</label>
+          <input class="px-4 py-2 bg-gray-50" type="text" id="name" v-model="name" required>
         </div>
         <div class="w-full">
-          <input v-model="email" type="text" placeholder="email"  class="px-4 py-2 bg-gray-50" />
+          <label for="email">Email:</label>
+          <input class="px-4 py-2 bg-gray-50" type="email" id="email" v-model="email" required>
         </div>
         <div  class="w-full">
-          <input v-model="password" type="text" placeholder="password" class="px-4 py-2 bg-gray-50" />
+          <label for="password">Password:</label>
+          <input class="px-4 py-2 bg-gray-50" type="password" id="password" v-model="password" required>
         </div>
       </div>
-      <button @click="registeruser" class="w-full mt-5 bg-indigo-600 text-white py-2 rounded-md font-semibold tracking-tight">Register</button>
+        <button class="w-full mt-5 bg-indigo-600 text-white py-2 rounded-md font-semibold tracking-tight" type="submit">Register</button>
+      </form>
     </div>
   </div>
 </template>

@@ -26,7 +26,7 @@ const menubar = computed(() => store.getters['sidebar/slidemenu'])
                 {{ slider.title }}
               </li>
             </span>
-          <li class="accounts1"><router-link to="/account">Accounts</router-link></li>
+          <li class="accounts1"><router-link to="/dashboard">Accounts</router-link></li>
         </ul>
       </div>
     </div>

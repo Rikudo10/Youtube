@@ -5,5 +5,5 @@ import productsPlugin from './plugins/productsPlugin'
 import registerPlugin from "./plugins/registerPlugin";
 
 export default createStore({
-    plugins: [ navigationPlugin, productsPlugin, categoriesPlugin, registerPlugin]
+    plugins: [ navigationPlugin, productsPlugin, categoriesPlugin, registerPlugin,]
 })

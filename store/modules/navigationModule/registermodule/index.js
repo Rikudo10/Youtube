@@ -7,8 +7,6 @@ const registermodule = {
             user: [
 
             ],
-            api_key: import.meta.env.VITE_API_URL,
-
         }
     },
 
@@ -23,7 +21,10 @@ const registermodule = {
     getters: {
     info(state){
         return state.user
-    }
+    },
+        getApiUrl: (state) => {
+          return  import.meta.env.VITE_API_URL
+        }
     },
 
 

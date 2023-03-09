@@ -14,19 +14,33 @@ const routes = [
   {
     path: "/account",
     name: "account",
-    component: () => import('@/views/AllAccount.vue'),
+    component: () => import('@/views/allaccounts/AllAccount.vue'),
     children:[
       {
-        path: "acccountsetting",
-        name:"acccountsetting",
-        component: () => import ('@/views/account/updatefile/accountsetting.vue')
+        path: "acc",
+        name:"acc",
+        component: () => import ('@/views/allaccounts/Acc.vue')
       },
-      {
-        path:"accountprivacy",
-        name: "accountprivacy",
-        component: ()=> import ('@/views/account/updatefile/accountprivacy.vue')
-      }
     ]
+  },
+  {
+    path: "/dashboard",
+    name: "Dashboard",
+    component: () => import("../components/dashboard/Dashboard.vue"),
+    children: [
+      {
+        path: "users",
+        name: "Users",
+        component: () => import("../components/dashboard/Users.vue"),
+        children: [
+          {
+            path: ":id",
+            name: "User",
+            component: () => import("../components/dashboard/User.vue")
+          }
+        ]
+      },
+    ],
   },
   {
     path: "/about",
