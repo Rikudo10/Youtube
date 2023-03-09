@@ -12,18 +12,6 @@ const routes = [
     component: home,
   },
   {
-    path: "/account",
-    name: "account",
-    component: () => import('@/views/allaccounts/AllAccount.vue'),
-    children:[
-      {
-        path: "acc",
-        name:"acc",
-        component: () => import ('@/views/allaccounts/Acc.vue')
-      },
-    ]
-  },
-  {
     path: "/dashboard",
     name: "Dashboard",
     component: () => import("../components/dashboard/Dashboard.vue"),
