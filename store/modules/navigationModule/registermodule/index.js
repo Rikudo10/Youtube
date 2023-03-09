@@ -4,6 +4,7 @@ const registermodule = {
 
     state() {
         return {
+            token: null,
             user: [
 
             ],
@@ -11,6 +12,9 @@ const registermodule = {
     },
 
     mutations:{
+        token(state, payload){
+            state.token = payload.data.token
+        },
         register(state,user){
             state.user.push(user)
 
@@ -29,6 +33,9 @@ const registermodule = {
 
 
     actions:{
+        token({commit}, token){
+            commit("register", token)
+        },
         register({commit},info){
             commit("register",info)
 
