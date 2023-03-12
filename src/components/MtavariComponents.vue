@@ -4,6 +4,16 @@ import youtubeicon from './icons/youtubeicon.vue'
 import {useStore} from 'vuex'
 import {computed} from 'vue'
 
+const deleteuser = ()=> {
+  store.dispatch('categories/deleteUser')
+}
+const adduser = ()=> {
+  store.dispatch('categories/addUser')
+}
+const edituser = ()=> {
+  store.dispatch('categories/editUser')
+}
+
 const store = useStore()
 const menubar = computed(() => store.getters['sidebar/slidemenu'])
 </script>
@@ -27,6 +37,9 @@ const menubar = computed(() => store.getters['sidebar/slidemenu'])
               </li>
             </span>
           <li class="accounts1"><router-link to="/dashboard">Accounts</router-link></li>
+          <li><button @click="deleteuser">Delete</button></li>
+          <li><button @click="edituser">EditUser</button></li>
+          <li><button @click="adduser">ADDUser</button></li>
         </ul>
       </div>
     </div>

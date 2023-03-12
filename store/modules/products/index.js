@@ -8,6 +8,5 @@ const productsmodule = {
     state,
     getters,
     mutations,
-    actions,
 }
 export default productsmodule

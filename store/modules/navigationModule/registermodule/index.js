@@ -26,6 +26,9 @@ const registermodule = {
         },
         getApiUrl: (state) => {
             return import.meta.env.VITE_API_URL
+        },
+        token(state) {
+            return state.token
         }
     },
 
