@@ -15,20 +15,6 @@ const routes = [
     path: "/dashboard",
     name: "Dashboard",
     component: () => import("../components/dashboard/Dashboard.vue"),
-    children: [
-      {
-        path: "users",
-        name: "Users",
-        component: () => import("../components/dashboard/Users.vue"),
-        children: [
-          {
-            path: ":id",
-            name: "User",
-            component: () => import("../components/dashboard/User.vue")
-          }
-        ]
-      },
-    ],
   },
   {
     path: "/about",

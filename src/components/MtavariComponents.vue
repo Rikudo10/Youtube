@@ -4,17 +4,11 @@ import youtubeicon from './icons/youtubeicon.vue'
 import {useStore} from 'vuex'
 import {computed} from 'vue'
 
-const deleteuser = ()=> {
-  store.dispatch('categories/deleteUser')
-}
-const adduser = ()=> {
-  store.dispatch('categories/addUser')
-}
-const edituser = ()=> {
-  store.dispatch('categories/editUser')
-}
-
 const store = useStore()
+
+
+const getAvatar = computed(() => store.getters['register/getUserAvatar']);
+
 const menubar = computed(() => store.getters['sidebar/slidemenu'])
 </script>
 <template>
@@ -22,7 +16,7 @@ const menubar = computed(() => store.getters['sidebar/slidemenu'])
     <div class="flex items-center flex-shrink-0 text-white mr-6 mydiv">
       <a class="youtubelogo" href="#">
         <youtubeicon/>
-        <span class="font-semibold text-xl tracking-tight youtube">Youtube</span>
+        <span class="font-semibold text-xl tracking-tight youtube">Youtube </span>
       </a>
       <div class="hamburger-menu">
         <input id="menu__toggle" type="checkbox"/>
@@ -36,10 +30,7 @@ const menubar = computed(() => store.getters['sidebar/slidemenu'])
                 {{ slider.title }}
               </li>
             </span>
-          <li class="accounts1"><router-link to="/dashboard">Accounts</router-link></li>
-          <li><button @click="deleteuser">Delete</button></li>
-          <li><button @click="edituser">EditUser</button></li>
-          <li><button @click="adduser">ADDUser</button></li>
+          <li class="accounts1"><router-link to="/dashboard">categorys</router-link></li>
         </ul>
       </div>
     </div>
@@ -53,7 +44,8 @@ const menubar = computed(() => store.getters['sidebar/slidemenu'])
       </div>
       <div class="accounts  ">
         <router-link to="/settings">
-        <Special-Icon/>
+          <img v-if="getAvatar" :src="getAvatar" alt="avatar" class="rounded-full" />
+          <Special-Icon v-else/>
         </router-link>
       </div>
     </div>
@@ -74,7 +66,6 @@ const menubar = computed(() => store.getters['sidebar/slidemenu'])
 }
 
 .accounts:hover {
-  border: 1px solid white;
   border-radius: 10px;
 }
 

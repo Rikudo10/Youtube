@@ -1,27 +1,89 @@
 <script setup>
 import { useStore } from "vuex";
-import axios from "axios";
-
+import { computed, onMounted, ref } from "vue";
 
 const store = useStore();
 
-const apiurl = store.getters["register/getApiUrl"]
+const editings = ref({});
 
-axios
-    .get( apiurl)
-    .then((response) => {
-      console.log(response)
-    })
+
+const newName = ref('');
+const newUserName = ref('');
+
+const toggleEditing = async (id) => {
+    if (editings.value[id]) {
+        delete editings.value[id];
+        const data = {
+            id,
+            name: newName.value,
+        };
+        await editUser(data);
+        newName.value = '';
+    } else {
+        editings.value[id] = true;
+    }
+}
+
+const users = computed(() => store.getters['register/getUsers']);
+
+const addUser = async () => {
+    await store.dispatch('register/addUser', newUserName.value);
+    newUserName.value = '';
+};
+const deleteUser = async (id) => await store.dispatch('register/deleteUser', id);
+const editUser = async (data) => await store.dispatch('register/editUser', data);
+
+onMounted(() => store.dispatch('register/getUsers'));
 </script>
 
 <template>
-  <div class="m-[10px]">
-    <RouterLink
-        to="/dashboard/users"
-        class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-    >Users</RouterLink
-    >
-  </div>
-  <RouterView></RouterView>
+    <div class="relative overflow-x-auto">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Type
+                    </th>
+                    <th scope="col" class="px-6 py-3" />
+                    <th scope="col" class="px-6 py-3" />
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="user in users" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <p v-if="!editings[user.id]">{{ user.name }}</p>
+                        <div v-else>
+                            <input type="text" v-model="newName" class="text-black"/>
+                            <button @click="toggleEditing(user.id)">Submit</button>
+                        </div>
+                    </th>
+                    <td class="px-6 py-4">
+                        {{ user.type }}
+                    </td>
+                    <td class="px-6 py-4">
+                        <button @click="deleteUser(user.id)">Delete</button>
+                    </td>
+                    <td class="px-6 py-4">
+                        <button @click="toggleEditing(user.id)">Edit</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <input type="text" v-model="newUserName" />
+        <button @click="addUser">Add</button>
+    </div>
 </template>
+
+<style scoped>
+button {
+    color: white;
+}
+
+table {
+    background-color: white;
+}
+</style>
 
