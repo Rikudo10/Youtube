@@ -57,7 +57,7 @@ onMounted(() => store.dispatch('register/getUsers'));
                         <p v-if="!editings[user.id]">{{ user.name }}</p>
                         <div v-else>
                             <input type="text" v-model="newName" class="text-black"/>
-                            <button @click="toggleEditing(user.id)">Submit</button>
+                            <button @click="toggleEditing(user.id)">Save</button>
                         </div>
                     </th>
                     <td class="px-6 py-4">
@@ -72,8 +72,9 @@ onMounted(() => store.dispatch('register/getUsers'));
                 </tr>
             </tbody>
         </table>
-        <input type="text" v-model="newUserName" />
-        <button @click="addUser">Add</button>
+        
+        <input class="bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-50 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" v-model="newUserName" />
+        <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" @click="addUser">Add</button>
     </div>
 </template>
 
