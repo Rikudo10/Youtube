@@ -1,5 +1,4 @@
 <script setup>
-
 </script>
 
 <template>
@@ -7,6 +6,7 @@
 
 <router-view />
   </div>
+  
 </template>
 
 

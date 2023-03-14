@@ -30,7 +30,7 @@ const addUser = async () => {
     await store.dispatch('register/addUser', newUserName.value);
     newUserName.value = '';
 };
-const deleteUser = async (id) =>  await store.dispatch('register/deleteUser', id);
+const deleteUser = async (id) => confirm('Do rou want to Delete Category?') ? await store.dispatch('register/deleteUser', id): null;
 const editUser = async (data) => await store.dispatch('register/editUser', data);
 
 onMounted(() => store.dispatch('register/getUsers'));
@@ -78,13 +78,4 @@ onMounted(() => store.dispatch('register/getUsers'));
     </div>
 </template>
 
-<style scoped>
-button {
-    color: white;
-}
-
-table {
-    background-color: white;
-}
-</style>
 

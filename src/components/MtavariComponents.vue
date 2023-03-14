@@ -1,4 +1,5 @@
 <script setup>
+import DropDownMenu from "@/components/DropDownMenu.vue";
 import Search from "@/components/Search.vue";
 import youtubeicon from './icons/Youtubeicon.vue'
 import {useStore} from 'vuex'
@@ -42,12 +43,8 @@ const menubar = computed(() => store.getters['sidebar/slidemenu'])
       <div class="messages">
         <Special-Icon2/>
       </div>
-      <div class="accounts  ">
-        <router-link to="/settings">
-          <img v-if="getAvatar" :src="getAvatar" alt="avatar" class="rounded-full" />
-          <Special-Icon v-else/>
-
-        </router-link>
+      <div class="accounts">
+        <DropDownMenu />
       </div>
     </div>
 
@@ -64,10 +61,6 @@ const menubar = computed(() => store.getters['sidebar/slidemenu'])
 
 .youtubelogo {
   display: flex;
-}
-
-.accounts:hover {
-  border-radius: 10px;
 }
 
 .allicons {
@@ -91,11 +84,6 @@ const menubar = computed(() => store.getters['sidebar/slidemenu'])
 
 .messages {
   width: 33px !important;
-}
-
-.accounts {
-  width: 33px !important;
-  color: white !important;
 }
 
 .allicons {

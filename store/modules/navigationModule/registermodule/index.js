@@ -25,6 +25,12 @@ const registermodule = {
         getUserAvatar(state, getters) {
             return getters.getInfo ? state.user.avatar : null;
         },
+        getUserName(state, getters) {
+            return getters.getInfo ? state.user.name : null;
+        },
+        getEmail(state, getters) {
+            return getters.getInfo ? state.user.email : null;
+        },
         getUsers(state) {
             return state.users;
         }
