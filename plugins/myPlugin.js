@@ -1,6 +1,6 @@
-import accountsicon from '../src/components/icons/accountsicon.vue'
-import messagesicon from '../src/components/icons/messagesicon.vue'
-import uploadicon from '../src/components/icons/uploadicon.vue'
+import accountsicon from '@/components/icons/Accountsicon.vue'
+import messagesicon from '@/components/icons/Messagesicon.vue'
+import uploadicon from '@/components/icons/Uploadicon.vue'
 
 export  default {
     install(app, options){

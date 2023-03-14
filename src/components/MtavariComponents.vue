@@ -1,6 +1,6 @@
 <script setup>
 import Search from "@/components/Search.vue";
-import youtubeicon from './icons/youtubeicon.vue'
+import youtubeicon from './icons/Youtubeicon.vue'
 import {useStore} from 'vuex'
 import {computed} from 'vue'
 
@@ -46,6 +46,7 @@ const menubar = computed(() => store.getters['sidebar/slidemenu'])
         <router-link to="/settings">
           <img v-if="getAvatar" :src="getAvatar" alt="avatar" class="rounded-full" />
           <Special-Icon v-else/>
+
         </router-link>
       </div>
     </div>

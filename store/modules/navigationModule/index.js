@@ -1,7 +1,7 @@
 
-import HomeIcon from '../../../src/components/icons/HomeIcon.vue'
-import ShortsIcon from '../../../src/components/icons/ShortsIcon.vue'
-import Subscribedicon from '../../../src/components/icons/Subscribedicon.vue'
+import HomeIcon from '@/components/icons/Homeicon.vue'
+import ShortsIcon from '@/components/icons/Shortsicon.vue'
+import Subscribedicon from '@/components/icons/Subscribedicon.vue'
 
 const navigationModule = {
     namespaced: true,

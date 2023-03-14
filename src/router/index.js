@@ -1,15 +1,10 @@
 import { createWebHistory, createRouter } from "vue-router";
-import home from "@/views/home.vue";
-import about from "@/views/about.vue";
-import help from "@/views/help.vue";
-import info from "@/views/info.vue";
-
 
 const routes = [
   {
     path: "/",
     name: "Home",
-    component: home,
+    component: () => import("../views/Home.vue"),
   },
   {
     path: "/dashboard",
@@ -19,32 +14,27 @@ const routes = [
   {
     path: "/about",
     name: "About",
-    component: about,
-  },
-  {
-    path: "/help",
-    name: "help",
-    component: help,
+    component: () => import("../views/About.vue"),
   },
   {
     path: "/info/:id",
     name: "info",
-    component: info,
+    component: () => import("../views/Info.vue"),
   },
   {
     path: "/settings",
-    name: "settings",
-    component: () => import('@/views/account/settings.vue'),
+    name: "Settings",
+    component: () => import('@/views/account/Settings.vue'),
     children:[
       {
         path: "login",
-        name:"login",
-        component: () => import ('@/views/account/updatefile/login.vue')
+        name:"Login",
+        component: () => import ('@/views/account/updatefile/Login.vue')
       },
       {
         path:"registration",
-        name: "registration",
-        component: ()=> import ('@/views/account/updatefile/registration.vue')
+        name: "Registration",
+        component: ()=> import ('@/views/account/updatefile/Registration.vue')
       }
     ]
   },

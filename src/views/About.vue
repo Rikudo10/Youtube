@@ -1,5 +1,5 @@
 <script setup>
-import watched from '../components/watched.vue';
+import watched from '../components/Watched.vue';
 </script>
 
 <template>
