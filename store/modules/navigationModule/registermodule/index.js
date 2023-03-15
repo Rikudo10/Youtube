@@ -12,12 +12,8 @@ const registermodule = {
         }
     },
     getters: {
-
         getInfo(state){
             return state.user
-        },
-        getUserById: ({users}) => (id) => {
-            return users.find(user => user.id === +id)
         },
         token(state) {
             return state.token
@@ -37,14 +33,14 @@ const registermodule = {
     }, 
 
     mutations: {
+        replaceToken(state, val){
+            state.token = val
+        },
         SAVE_TOKEN(state, payload) {
             state.token = payload
         },
         SAVE_USER(state, payload){
             state.user = payload
-        },
-        USER_REGISTER(state, user){
-            state.user.push(user)
         },
         SAVE_USERS(state, users) {
             state.users = users;
@@ -56,9 +52,7 @@ const registermodule = {
         token({ commit }, {user, token}) {
             commit("SAVE_TOKEN", token)
             commit("SAVE_USER", user)
-        },
-        register({commit}, getInfo) {
-            commit("USER_REGISTER", getInfo)
+            localStorage.setItem("token", JSON.stringify(token))
         },
         async getUsers({commit, getters}) {
             const res = await axios.get(`https://items.magischer.de/api/categories`).catch(e => console.log(e));
