@@ -15,7 +15,6 @@ axios.defaults.baseURL=import.meta.env.VITE_BASE_API_URL
 
 
 
-console.log(axios.defaults)
   createApp(App)
     .use(store)
     .use(router)
