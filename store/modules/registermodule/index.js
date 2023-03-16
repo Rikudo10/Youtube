@@ -55,14 +55,14 @@ const registermodule = {
             localStorage.setItem("token", JSON.stringify(token))
         },
         async getUsers({commit, getters}) {
-            const res = await axios.get(`https://items.magischer.de/api/categories`).catch(e => console.log(e));
+            const res = await axios.get(`categories`).catch(e => console.log(e));
               if (res.data.success) {
                 commit("SAVE_USERS", res.data.data);
               }
         },
         async addUser({getters, dispatch}, name) {
             await axios.post(
-              `https://items.magischer.de/api/categories`,
+              `categories`,
               {
                 name,
                 type: "news",
@@ -72,14 +72,14 @@ const registermodule = {
           },
           async deleteUser({getters, dispatch}, id) {
              await axios.delete(
-              `https://items.magischer.de/api/categories/${id}`,
+              `categories/${id}`,
 
             ).catch(e => console.log(e));
             dispatch('getUsers');
           },
           async editUser({getters, dispatch}, user) {
             await axios.put(
-              `https://items.magischer.de/api/categories/${user.id}`,
+              `categories/${user.id}`,
               {
                 name: user.name,
                 type: "news",
