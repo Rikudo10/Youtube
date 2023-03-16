@@ -67,24 +67,13 @@ const registermodule = {
                 name,
                 type: "news",
               },
-              {
-                headers: {
-                    Accept: "application/json",
-                    Authorization: `Bearer ${getters.token}`,
-                },
-              }
             ).catch(e => console.log(e));
             dispatch('getUsers');
           },
           async deleteUser({getters, dispatch}, id) {
              await axios.delete(
               `https://items.magischer.de/api/categories/${id}`,
-              {
-                headers: {
-                  Accept: "application/json",
-                  Authorization: `Bearer ${getters.token}`,
-                },
-              }
+
             ).catch(e => console.log(e));
             dispatch('getUsers');
           },
@@ -95,12 +84,6 @@ const registermodule = {
                 name: user.name,
                 type: "news",
               },
-              {
-                headers: {
-                  Accept: "application/json",
-                  Authorization: `Bearer ${getters.token}`,
-                },
-              }
             ).catch(e => console.log(e));
             dispatch('getUsers');
           },

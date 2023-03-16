@@ -1,4 +1,4 @@
-import registermodule from "../modules/navigationModule/registermodule";
+import registermodule from "../modules/registermodule";
 
 const registerPlugin = function(store){
     store.registerModule('register', registermodule)
