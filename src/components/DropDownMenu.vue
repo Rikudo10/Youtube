@@ -37,6 +37,7 @@ const logOut = () => {
       <div v-else class="truncate">Sing In</div>
     </div>
     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
+      <div v-if="!getEmail">
       <router-link to="/settings/registration">
         <li>
           <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
@@ -45,6 +46,8 @@ const logOut = () => {
           </a>
         </li>
       </router-link>
+      </div>
+      <div v-if="!getEmail">
       <router-link to="/settings/login">
         <li>
           <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
@@ -53,6 +56,7 @@ const logOut = () => {
           </a>
         </li>
       </router-link>
+  </div>
     </ul>
     <div v-if="getEmail" class="py-2">
       <a @click="logOut" href=""

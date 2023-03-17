@@ -60,7 +60,7 @@ onMounted(() => store.dispatch('register/getUsers'));
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         <p v-if="!editings[user.id]">{{ user.name }}</p>
                         <div v-else>
-                            <input type="text" v-model="newName" class="text-black"/>
+                            <input :placeholder="(user.name)" type="text" v-model="newName" class="text-black"/>
                             <button @click="toggleEditing(user.id)">Save</button>
                         </div>
                     </th>
