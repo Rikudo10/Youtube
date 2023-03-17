@@ -1,8 +1,12 @@
 <script setup>
 import { useStore } from "vuex";
 import { computed, onMounted, ref } from "vue";
+import { useRouter } from 'vue-router';
 
 const store = useStore();
+const router = useRouter();
+
+
 
 const editings = ref({});
 

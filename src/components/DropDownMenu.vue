@@ -11,6 +11,10 @@ onMounted(() => {
 const getAvatar = computed(() => store.getters['register/getUserAvatar']);
 const getUserName = computed(() => store.getters['register/getUserName']);
 const getEmail = computed(() => store.getters['register/getEmail']);
+const logOut = () => {
+  localStorage.clear()
+}
+
 </script>
 
 <template>
@@ -50,8 +54,10 @@ const getEmail = computed(() => store.getters['register/getEmail']);
         </li>
       </router-link>
     </ul>
-    <div class="py-2">
-      <a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+    <div v-if="getEmail" class="py-2">
+      <a @click="logOut" href=""
+         class=" bg-red-600 text-white font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center">Log
+        Out</a>
     </div>
   </div>
 
